@@ -1,0 +1,74 @@
+body {
+  background-color: #DFDFDF;
+}
+
+.contatiner {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+.error-msg {
+  color: #D5AAAA;
+}
+
+#error {
+  display: none;
+  background-color: red;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 20px;
+}
+
+#source {
+  border-width: 1px;
+  border-color: #B9B9B9;
+  margin: 0;
+  padding: 5px;
+  height: 100%;
+  width: 50%;
+  float: left;
+  min-height: 16px;
+  white-space: pre-wrap;
+  outline: none; // Prevent the yellow outline on focus
+  -webkit-user-modify: read-write-plaintext-only;
+  resize: none;
+}
+
+.compiled-container {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 50%;
+  float: left;
+  background-color: #575757;
+  color: white;
+  word-wrap: break-word; /* Forces a break */
+  position: relative;
+}
+
+.compiled-container #btn-run {
+  margin: 10px;
+  position: absolute;
+  float: right;
+  right: 20px;
+}
+
+#compiled {
+  margin: 0;
+  overflow-y: scroll;
+  padding: 0;
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+}
+
+/* Turned off till we get responses working */
+#exec_result {
+  width: 0%;
+}
+

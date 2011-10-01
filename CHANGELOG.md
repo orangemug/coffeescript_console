@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.2.2
+
+ * Updated version in the manifest
+
+
 ## v0.2.1
 
  * Added better build script and README to go along with it.

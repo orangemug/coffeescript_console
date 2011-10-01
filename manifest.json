@@ -1,6 +1,6 @@
 {
   "name": "CoffeeScript Console",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "icons": {
     "128": "assets/icon.png",
     "16": "assets/icon.png"

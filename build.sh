@@ -8,7 +8,7 @@ cleanup() {
 
 trap cleanup INT TERM EXIT
 
-BUILD_DIR=build_v0.2.0
+BUILD_DIR=build_v0.2.2
 
 coffee -c js
 

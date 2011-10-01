@@ -12,16 +12,15 @@ It's a bit lame on the features at the moment, but here they are...
  * Syntax highlighting (via [CodeMirror](http://codemirror.net))
 
 
+## To build
+To build just run the following from the base directory, which will create you the `.crx` extension to install into chrome
+
+    ./build.sh
+
+
 ## Install
 
-Until I get it into a bundled install just install it as an unpacked extension. The details to do that are [here](http://code.google.com/chrome/extensions/getstarted.html)
-
-
-## To build
-
-To build just run the following from the base directory
-
-    coffee -c js
+Either install the `.crx` from the build described above by simply dragging it into chrome, or just install it as an unpacked extension. The details to do that are [here](http://code.google.com/chrome/extensions/getstarted.html)
 
 
 ## Future features
@@ -34,7 +33,9 @@ To build just run the following from the base directory
 
 ## Contributing
 
-The project uses the branching model outlined [here](http://nvie.com/posts/a-successful-git-branching-model/), so basically do any commits on the _develop_ branch. There's also a tool called [gitflow](https://github.com/nvie/gitflow) which helps with this branching model.
+The project uses the branching model outlined [here](http://nvie.com/posts/a-successful-git-branching-model/), so basically do any commits on the _develop_ branch. There's also a tool called [gitflow](https://github.com/nvie/gitflow) which helps with this branching model. Also note you'll have to run the following to compile the coffeescript during development
+
+    coffee --watch -c js
 
 
 ## External Libs

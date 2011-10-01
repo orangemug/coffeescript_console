@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.2.1
+
+ * Added better build script and README to go along with it.
+
+
 ## v0.2.0
 
  * Added build script

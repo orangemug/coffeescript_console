@@ -12,15 +12,17 @@ It's a bit lame on the features at the moment, but here they are...
  * Syntax highlighting (via [CodeMirror](http://codemirror.net))
 
 
+## Install
+
+Download the latest version [here](https://github.com/orangemug/coffeescript_console/downloads) (It's the `*.crx` files you're after).
+
+Or just install it as an unpacked extension, the details to do that are [here](http://code.google.com/chrome/extensions/getstarted.html)
+
+
 ## To build
 To build just run the following from the base directory, which will create you the `.crx` extension to install into chrome
 
     ./build.sh
-
-
-## Install
-
-Either install the `.crx` from the build described above by simply dragging it into chrome, or just install it as an unpacked extension. The details to do that are [here](http://code.google.com/chrome/extensions/getstarted.html)
 
 
 ## Future features

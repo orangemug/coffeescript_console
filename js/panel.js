@@ -1,11 +1,30 @@
 (function() {
   window.onload = function() {
-    var compile, compiledElem, exec, runBtnElem, sourceElem;
+    var compile, compiled, compiledElem, compiledTextfeild, editor, editorTextfeild, exec, runBtnElem, sourceElem;
     sourceElem = document.getElementById('source');
     compiledElem = document.getElementById('compiled');
     runBtnElem = document.getElementById('btn-run');
+    editor = CodeMirror.fromTextArea(sourceElem, {
+      'matchBrackets': true,
+      'lineNumbers': false,
+      'indentUnit': 2,
+      'tabMode': "shift",
+      'enterMode': "flat",
+      'mode': "coffeescript",
+      'theme': "om"
+    });
+    compiled = CodeMirror.fromTextArea(compiledElem, {
+      'readOnly': true,
+      'matchBrackets': true,
+      'lineNumbers': false,
+      'indentUnit': 2,
+      'tabMode': "shift",
+      'enterMode': "flat",
+      'mode': "javascript",
+      'theme': "om-dark"
+    });
     compile = function() {
-      return CoffeeScript.compile(sourceElem.value, {
+      return CoffeeScript.compile(editor.getValue(), {
         'bare': true
       });
     };
@@ -23,37 +42,23 @@
         return null;
       }
     };
-    sourceElem.onkeypress = function(e) {
+    editorTextfeild = editor.getInputField();
+    compiledTextfeild = compiled.getInputField();
+    editorTextfeild.onkeypress = function(e) {
       if (e.ctrlKey && e.keyCode === 9) {
         return exec();
       }
     };
-    sourceElem.onkeyup = function(e) {
-      var end, node, start, str, text;
-      if (e.keyCode === 9) {
-        e.preventDefault();
-        node = e.currentTarget;
-        text = "  ";
-        start = node.selectionStart;
-        end = node.selectionEnd;
-        str = "";
-        str += node.value.substring(0, start);
-        str += text;
-        str += node.value.substring(end, node.value.length);
-        node.value = str;
-        node.setSelectionRange(end + text.length, end + text.length);
-      }
+    editorTextfeild.onkeyup = function(e) {
       try {
-        compiledElem.classList.remove('error-msg');
-        return compiledElem.innerHTML = compile();
+        return compiled.setValue(compile());
       } catch (err) {
-        compiledElem.innerHTML = "ERROR: " + err;
-        return compiledElem.classList.add('error-msg');
+        return compiled.setValue("ERROR: " + err);
       }
     };
-    return runBtnElem.onclick = function() {
-      alert("Clicked");
+    runBtnElem.onclick = function() {
       return exec();
     };
+    return compiled.setValue(compile());
   };
 }).call(this);

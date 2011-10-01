@@ -1,0 +1,19 @@
+/* Default */
+.cm-s-om-dark { color: #B1B1B1; }
+.cm-s-om-dark .CodeMirror-cursor { border-left: 1px solid #D8D8D8 !important; }
+
+/* Comments */
+.cm-s-om-dark span.cm-comment { color: #929292; }
+
+/* Number and strings */
+.cm-s-om-dark span.cm-number, .cm-s-neat span.cm-atom, .cm-s-om span.cm-string { color: #FFA300; }
+
+/* Keywords */
+.cm-s-om-dark span.cm-keyword { font-weight: bold; color: #AFAFAF; }
+.cm-s-om-dark span.cm-builtin { font-weight: bold; color: #AFAFAF; }
+.cm-s-om-dark span.cm-special { font-weight: bold; color: #AFAFAF; }
+.cm-s-om-dark span.cm-meta {color: #929292;}
+
+/* Variables */
+.cm-s-om-dark span.cm-variable { color: #AFAFAF; }
+.cm-s-om-dark span.cm-variable-2 { color: #AC6900; }

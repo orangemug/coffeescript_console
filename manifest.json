@@ -1,12 +1,12 @@
 {
   "name": "CoffeeScript Console",
-  "version": "0.1",
+  "version": "0.1.0",
   "icons": {
     "128": "assets/icon.png",
     "16": "assets/icon.png"
   },
-  "background_page": "background.html",
-  "devtools_page": "app.html",
+  "background_page": "html/background.html",
+  "devtools_page": "html/app.html",
   "permissions": [
     "experimental",
     "tabs",

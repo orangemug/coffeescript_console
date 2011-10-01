@@ -9,15 +9,15 @@ It's a bit lame on the features at the moment, but here they are...
 
  * Typing CoffeeScript in the editor panel (left) compiles to JavaScript directly in the right panel
  * Press `ctrl + i` to inject from the editor pane into the active tab
- * Pressing the `tab` key doesn't switch focus
+ * Syntax highlighting (via [CodeMirror](http://codemirror.net))
 
 
-# Install
+## Install
 
 Until I get it into a bundled install just install it as an unpacked extension. The details to do that are [here](http://code.google.com/chrome/extensions/getstarted.html)
 
 
-# To build
+## To build
 
 To build just run the following from the base directory
 
@@ -29,11 +29,16 @@ To build just run the following from the base directory
  * Show responses to commands injected simular to Chromes console panel.
  * History support
  * Can we pass forward all the `$0`, `copy()` etc... commands???
- * Syntax highlighting
+ * Implement js2coffee for reverse compile
 
 
-## Known issues
+## Contributing
 
- * You can't debug Chrome special pages
-   - Error 'Cannot access contents of url "chrome://newtab/".'
+The project uses the branching model outlined [here](http://nvie.com/posts/a-successful-git-branching-model/), so basically do any commits on the _develop_ branch. There's also a tool called [gitflow](https://github.com/nvie/gitflow) which helps with this branching model.
 
+
+## External Libs
+Coffeescript Console uses these awesome open source libs:
+
+ * <http://codemirror.net> - For the editor panes and syntax highlighting
+ * <http://jashkenas.github.com/coffee-script/> - Unsurprisingly

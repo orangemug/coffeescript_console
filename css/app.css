@@ -22,49 +22,64 @@ body {
   height: 20px;
 }
 
-#source {
+#source-container {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 10px;
+  right: 50%;
+  top: 10px;
+  bottom: 10px;
+  overflow-y: scroll;
+  overflow-x: auto;
   border-width: 1px;
   border-color: #B9B9B9;
-  margin: 0;
-  padding: 5px;
-  height: 100%;
-  width: 50%;
-  float: left;
-  min-height: 16px;
-  white-space: pre-wrap;
-  outline: none; // Prevent the yellow outline on focus
-  -webkit-user-modify: read-write-plaintext-only;
-  resize: none;
+  border-style: solid;
 }
+
+#source {
+}
+
 
 .compiled-container {
   margin: 0;
   padding: 0;
-  min-height: 100%;
-  width: 50%;
-  float: left;
+  position: absolute;
+  background-color: red;
+  right: 10px;
+  left: 50%;
+  top: 10px;
+  bottom: 10px;
   background-color: #575757;
-  color: white;
-  word-wrap: break-word; /* Forces a break */
-  position: relative;
+  overflow: hidden;
 }
 
+.compiled-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+
+.CodeMirror {
+  height: auto;
+  min-height: 100%;
+}
+
+.CodeMirror-scroll {
+  height: auto;
+  min-height: 100%;
+  overflow: visible;
+}
+
+
 .compiled-container #btn-run {
-  margin: 10px;
+  top: 10px;
+  right: 30px;
   position: absolute;
-  float: right;
-  right: 20px;
 }
 
 #compiled {
-  margin: 0;
-  overflow-y: scroll;
-  padding: 0;
-  position: absolute;
-  left: 5px;
-  right: 5px;
-  top: 5px;
-  bottom: 5px;
 }
 
 /* Turned off till we get responses working */

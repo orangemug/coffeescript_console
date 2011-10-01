@@ -4,9 +4,28 @@ window.onload = () ->
   compiledElem = document.getElementById('compiled')
   runBtnElem   = document.getElementById('btn-run')
 
+  editor = CodeMirror.fromTextArea sourceElem,
+    'matchBrackets': true
+    'lineNumbers': false
+    'indentUnit': 2
+    'tabMode': "shift"
+    'enterMode': "flat"
+    'mode': "coffeescript"
+    'theme': "om"
+
+  compiled = CodeMirror.fromTextArea compiledElem,
+    'readOnly': true
+    'matchBrackets': true
+    'lineNumbers': false
+    'indentUnit': 2
+    'tabMode': "shift"
+    'enterMode': "flat"
+    'mode': "javascript"
+    'theme': "om-dark"
+
   # Compile the source
   compile = () ->
-    CoffeeScript.compile sourceElem.value, {'bare': true}
+    CoffeeScript.compile editor.getValue(), {'bare': true}
 
   # Run the code
   exec = () ->
@@ -23,43 +42,29 @@ window.onload = () ->
       # Do nothing
       null
 
+  editorTextfeild   = editor.getInputField()
+  compiledTextfeild = compiled.getInputField()
+
   # Watch for 'inject' key press.
-  sourceElem.onkeypress = (e) ->
+  editorTextfeild.onkeypress = (e) ->
     # Watch for ctrl + i (inject)
     if e.ctrlKey && e.keyCode == 9
       exec()
 
 
   # Compile on keydown
-  sourceElem.onkeyup = (e) ->
-    # Also capture a tab and insert 2 spaces.
-    if e.keyCode == 9
-      e.preventDefault()
-      node = e.currentTarget
-
-      # Insert a tab instead.
-      text = "  "
-      start = node.selectionStart
-      end   = node.selectionEnd
-
-      str  = ""
-      str += node.value.substring(0, start)
-      str += text
-      str += node.value.substring(end, node.value.length)
-      node.value = str
-      node.setSelectionRange end+text.length, end+text.length
-
+  editorTextfeild.onkeyup = (e) ->
     # Compile source 
     try
-      compiledElem.classList.remove('error-msg')
-      compiledElem.innerHTML = compile()
+      compiled.setValue compile()
     catch err
-      compiledElem.innerHTML = "ERROR: #{err}"
-      compiledElem.classList.add('error-msg')
+      compiled.setValue "ERROR: #{err}"
 
 
   # Bind proc to exec the code
   runBtnElem.onclick = () ->
-    alert "Clicked"
     exec()
+
+
+  compiled.setValue compile()
  

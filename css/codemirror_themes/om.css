@@ -1,0 +1,19 @@
+/* Default */
+.cm-s-om { color: #B1B1B1; }
+.cm-s-om .CodeMirror-cursor { border-left: 1px solid #3E3E3E !important; }
+
+/* Comments */
+.cm-s-om span.cm-comment { color: #929292; }
+
+/* Number and strings */
+.cm-s-om span.cm-number, .cm-s-neat span.cm-atom, .cm-s-om span.cm-string { color: #E69300; }
+
+/* Keywords */
+.cm-s-om span.cm-keyword { font-weight: bold; color: #5F5F5F; }
+.cm-s-om span.cm-builtin { font-weight: bold; color: #5F5F5F; }
+.cm-s-om span.cm-special { font-weight: bold; color: #5F5F5F; }
+.cm-s-om span.cm-meta {color: #929292;}
+
+/* Variables */
+.cm-s-om span.cm-variable { color: #5F5F5F; }
+.cm-s-om span.cm-variable-2 { color: #AC6900; }

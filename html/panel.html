@@ -1,0 +1,34 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/vendor/codemirror/lib/codemirror.css" />
+  <link rel="stylesheet" type="text/css" href="/css/codemirror_themes/om.css" />
+  <link rel="stylesheet" type="text/css" href="/css/codemirror_themes/om-dark.css" />
+  <link rel="stylesheet" type="text/css" href="/css/app.css" />
+</head>
+<body>
+  <div>
+    <div class="container">
+      <div id="source-container">
+        <textarea id="source"></textarea>
+      </div>
+      <div class="compiled-container">
+        <div class="compiled-scroll">
+          <textarea id="compiled"></textarea>
+        </div>
+        <input id="btn-run" type="button" value="Inject">
+      </div>
+      <div id="exec_result"></div>
+      <div id="error"></div>
+    </div>
+  </div>
+  <!-- Code mirror -->
+  <script src="/vendor/codemirror/lib/codemirror.js"></script>
+  <script src="/vendor/codemirror/lib/runmode.js"></script>
+  <script src="/vendor/codemirror/mode/javascript/javascript.js"></script>
+  <script src="/vendor/codemirror/mode/coffeescript/coffeescript.js"></script>
+  <!-- CoffeeScript compiler -->
+  <script src="/vendor/coffee-script.js"></script>
+  <!-- App -->
+  <script src="/js/panel.js"></script>
+</body>
+</html>

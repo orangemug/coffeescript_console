@@ -18,6 +18,7 @@ Download the latest version [here](https://github.com/orangemug/coffeescript_con
 
 Or just install it as an unpacked extension, the details to do that are [here](http://code.google.com/chrome/extensions/getstarted.html)
 
+Please note you need Chrome 15+ with the command line option `--enable-experimental-extension-apis` enabled.
 
 ## To build
 To build just run the following from the base directory, which will create you the `.crx` extension to install into chrome
